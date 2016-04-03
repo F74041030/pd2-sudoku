@@ -1,5 +1,6 @@
 #include<iostream>
 #include"Sudoku.h"
+#include<cstdlib>
 #define UNASSIGNED 0
 #define N 9
  using namespace std;
@@ -601,11 +602,13 @@ void Sudoku::flip(int n)
 void Sudoku::transform()
 	 {
 		      int i;int j;
-			       readIn();
-				   changeRow(0,1);
-				   changeCol(0,1);
-				        changeNum(3,4);
-						     rotate(1);
+			   srand(time(NULL));
+			        readIn();
+					     changeNum(rand()%9+1,rand()%9+1);
+						      changeRow(rand()%3,rand()%3);
+							       changeCol(rand()%3,rand()%3);
+								        rotate(rand()%101);
+										     flip(rand()%2);
 							      for (int i = 0; i < N; i++)
 									       {
 											            for (int j = 0; j < N; j++)
