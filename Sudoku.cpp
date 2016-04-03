@@ -602,6 +602,8 @@ void Sudoku::transform()
 	 {
 		      int i;int j;
 			       readIn();
+				   changeRow(0,1);
+				   changeCol(0,1);
 				        changeNum(3,4);
 						     rotate(1);
 							      for (int i = 0; i < N; i++)
